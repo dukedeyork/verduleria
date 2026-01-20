@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tienda de Frutas y Verduras</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b0d] dark:text-white min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary font-bold">eco</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">FreshMarket</h2>
+</div>
+<div class="relative">
+<button class="flex items-center justify-center rounded-full bg-white dark:bg-zinc-800 shadow-sm border border-zinc-200 dark:border-zinc-700 w-10 h-10">
+<span class="material-symbols-outlined text-zinc-700 dark:text-zinc-200">shopping_cart</span>
+</button>
+<span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white border-2 border-background-light dark:border-background-dark">
+                    3
+                </span>
+</div>
+</div>
+<!-- SearchBar Component Integration -->
+<div class="mt-4">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-stretch rounded-xl h-12 bg-white dark:bg-zinc-800 shadow-sm border border-zinc-100 dark:border-zinc-700">
+<div class="flex items-center justify-center pl-4 text-zinc-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-base font-normal placeholder:text-zinc-400" placeholder="Buscar frutas y verduras..."/>
+</div>
+</label>
+</div>
+</nav>
+<!-- Chips (Categories) -->
+<div class="flex gap-3 px-4 py-4 overflow-x-auto no-scrollbar">
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-6 text-white shadow-lg shadow-primary/20">
+<p class="text-sm font-semibold">Todos</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-zinc-800 px-6 border border-zinc-100 dark:border-zinc-700">
+<p class="text-zinc-600 dark:text-zinc-300 text-sm font-medium">Frutas</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-zinc-800 px-6 border border-zinc-100 dark:border-zinc-700">
+<p class="text-zinc-600 dark:text-zinc-300 text-sm font-medium">Verduras</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-zinc-800 px-6 border border-zinc-100 dark:border-zinc-700">
+<p class="text-zinc-600 dark:text-zinc-300 text-sm font-medium">Orgánico</p>
+</div>
+</div>
+<!-- Product Section Title -->
+<div class="px-4 flex items-center justify-between">
+<h3 class="text-lg font-bold">Ofertas de hoy</h3>
+<button class="text-primary text-sm font-semibold">Ver todo</button>
+</div>
+<!-- ImageGrid (Product Grid) -->
+<main class="flex-1 overflow-y-auto pb-24">
+<div class="grid grid-cols-2 gap-4 p-4">
+<!-- Product Card 1 -->
+<div class="flex flex-col gap-3 bg-white dark:bg-zinc-800 p-3 rounded-xl shadow-sm border border-zinc-50 dark:border-zinc-700 relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden relative" data-alt="Fresh red apples pile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTvf6rIcxbXHlONC2_cGXVVhuxm8LqUn5SkQY44hjL6Ox6ZfiFsfxSAX3cXUm1uYcFkHB3200tsATPmJ8ZRnT_WvpeOvMPHgF4S4l0fBtSJwVI3Zpy1vMn0c_n7oQzRc9GidxBEFj4JoHqI7oDjHk1K5Dbg2RJE5sF-OOySP9hlXPgXXzcW9wjiKpHCh2sUAFEoNfZ0naJphYm2UBPn88cdhoUMv3Hdj6-Drs6vkuQQCxM1O601BUocLEUt1QcISXkBHV1FPt8iAU0");'>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b0d] dark:text-zinc-100 text-base font-bold leading-tight">Manzanas Rojas</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">$2.50 / kg</p>
+</div>
+<button class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col gap-3 bg-white dark:bg-zinc-800 p-3 rounded-xl shadow-sm border border-zinc-50 dark:border-zinc-700 relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden" data-alt="Bunch of fresh carrots" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVPtxFufcKfVUMoek1Iho0kpz5q1TudOJCm99tZLk8cH_8MZE-vdZwQdpoekMNTTvGY2w7sjWn1CWcQ0E_ytWcqd88iaiyBoWlr9eLsnR4FFpF_eFq8E-rcmpaICPkyTg-TbkkJ1-xQ81lVwID3J4SCTBuP1e2JkPbfYeNsSZQyGNd92ZUQdVTaRS1fbIt2NGalpyl6hlmMIL5Muw5dtdyMF_d6eLiQi5Kkij4D4mJv6a_kFF-ZLiqFY6ZMUfGWbgkI3r9q5rneVeb");'>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b0d] dark:text-zinc-100 text-base font-bold leading-tight">Zanahorias</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">$1.80 / kg</p>
+</div>
+<button class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col gap-3 bg-white dark:bg-zinc-800 p-3 rounded-xl shadow-sm border border-zinc-50 dark:border-zinc-700 relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden" data-alt="Fresh ripe bananas" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIUzZhytxeYh-zWLCskPiK4hg1N5egR5oNjQcouPQ-CEEwJWLGsldX_m1ekwqflXB598453BktmswbIoQi_3gC2SDvREV7VEigBj49PUKbaOlittq3uG7XzA99MUf4bEbrNmcPC5Oy7oiL8u5LKcZ57nL-Epdo4gUPz4jjb1ymTVX9PJDFRUn4LjRsFr_7G8rXwMQx3qJssA3ZJrv2c2axo9ga-16GYAvhPUqvZ3keB_cqN4J80F8iJ1Nimu8Pa5X_44IPwARI4jF9");'>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b0d] dark:text-zinc-100 text-base font-bold leading-tight">Plátanos</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">$1.20 / kg</p>
+</div>
+<button class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+</div>
+<!-- Product Card 4 -->
+<div class="flex flex-col gap-3 bg-white dark:bg-zinc-800 p-3 rounded-xl shadow-sm border border-zinc-50 dark:border-zinc-700 relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden" data-alt="Green organic broccoli" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrV3lmnwZ_UOU7nyGdYd0zoUgOzunU8FgThwX6WQ7ns5cyXPgI1oEqrCdKurC08jojKnewv2LW40cOq8MR-5aDOvte6r2hyEWLqCkP2ZaMzq7bJjau7El7vFfzKcsp7-NomtaARG-DVxMltY5BkvSSeiF0g0wRaEPbLa9EpSEJ888wRxkqPYRY4mWIvUhTp5LWtysj1fqqp5Bet5UuvfkWwNaQicnNbP-pxaG6EnNtvkGahg7uO8Qnl0T7J1Ng5xYr_nmiWOBold4_");'>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b0d] dark:text-zinc-100 text-base font-bold leading-tight">Brócoli</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">$3.00 / kg</p>
+</div>
+<button class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+</div>
+<!-- Product Card 5 -->
+<div class="flex flex-col gap-3 bg-white dark:bg-zinc-800 p-3 rounded-xl shadow-sm border border-zinc-50 dark:border-zinc-700 relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden" data-alt="Red ripe strawberries" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNFF6nSGccO--9UXUBax0ZQ-eRda90zA6jw5PC90qlThutUFXOMesDhLKLtLuzgm66L9zfwVyqNxiXeLRTc5bGFyDAmAXfxk62rhzIO5rJu3exWLYQqnOS8K2qnC9wRSG0ZE9UIV_URS-s04OQykHZjxpWacudh3WYBP5S9esbPVSZP62YvmdcY37BuMcqRxGW1Z0A9KQPYsiDtts8JyHSmr4Z1A9WpINJFagG64mGlr6FR0PAGYnMgfuO2azsAlwCPNqksf5eu0e8");'>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b0d] dark:text-zinc-100 text-base font-bold leading-tight">Fresas</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">$4.50 / kg</p>
+</div>
+<button class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+</div>
+<!-- Product Card 6 -->
+<div class="flex flex-col gap-3 bg-white dark:bg-zinc-800 p-3 rounded-xl shadow-sm border border-zinc-50 dark:border-zinc-700 relative">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg overflow-hidden" data-alt="Fresh spinach leaves" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAa_i4Es3AmFuiYzAX17xcUJ2dKikU6-DssE3oTvUQinNKOOT-CGpJuNoX8KdUZ7rNGZDhb8jsG7Q3AEKDOljKjSFtDhh7U3olJ9L5-VP4B7TEAnTmyA2hCtzMgX3IOdatmtAPzk1PDZa5bYehCsskyRA0bPBK49w-r_PN_87qXIcmm9vQdn5I-rYu0TgkMVoMEUpaxohvilylCDjds3JUljWYAtKXYX_DPyJG3utpPzyU8q8OZwIO6sAB82eRvVE-eY3A0ksK5bFKq");'>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b0d] dark:text-zinc-100 text-base font-bold leading-tight">Espinacas</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">$2.20 / kg</p>
+</div>
+<button class="absolute bottom-3 right-3 flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined font-bold">add</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-zinc-200 dark:border-zinc-800 px-4 pb-8 pt-2">
+<div class="flex justify-around items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-icon text-[28px]">home</span>
+<p class="text-[10px] font-bold tracking-wide uppercase">Inicio</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-400 dark:text-zinc-500" href="#">
+<span class="material-symbols-outlined text-[28px]">search</span>
+<p class="text-[10px] font-medium tracking-wide uppercase">Buscar</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-400 dark:text-zinc-500" href="#">
+<span class="material-symbols-outlined text-[28px]">receipt_long</span>
+<p class="text-[10px] font-medium tracking-wide uppercase">Pedidos</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-400 dark:text-zinc-500" href="#">
+<span class="material-symbols-outlined text-[28px]">person</span>
+<p class="text-[10px] font-medium tracking-wide uppercase">Perfil</p>
+</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Pedidos Entrantes</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d121b] dark:text-white">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden">
+<!-- Top App Bar (iOS style large title area) -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center justify-between p-4 pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">inventory_2</span>
+<h1 class="text-2xl font-bold leading-tight tracking-tight">Gestión de Pedidos</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+</div>
+</div>
+<!-- Tabs Navigation -->
+<nav class="flex border-b border-[#cfd7e7] dark:border-gray-700 px-4">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-[13px] pt-4 flex-1" href="#">
+<span class="text-primary text-sm font-bold">Pendientes</span>
+<span class="mt-1 h-1.5 w-1.5 rounded-full bg-primary"></span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#4c669a] dark:text-gray-400 pb-[13px] pt-4 flex-1" href="#">
+<span class="text-sm font-bold">En Proceso</span>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#4c669a] dark:text-gray-400 pb-[13px] pt-4 flex-1" href="#">
+<span class="text-sm font-bold">Entregados</span>
+</a>
+</nav>
+</header>
+<!-- Main Content (Scrollable) -->
+<main class="flex-1 overflow-y-auto p-4 space-y-4 pb-24">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-1">
+<p class="text-sm font-semibold text-[#4c669a] dark:text-gray-400 uppercase tracking-wider">Hoy • 3 Pedidos nuevos</p>
+<span class="material-symbols-outlined text-[#4c669a]">filter_list</span>
+</div>
+<!-- Pending Card 1 -->
+<div class="group flex flex-col items-stretch justify-start rounded-xl shadow-sm bg-white dark:bg-[#1a2133] border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-yellow-500 flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-yellow-500"></span> PENDIENTE
+                            </span>
+<h3 class="text-lg font-bold mt-1 text-[#0d121b] dark:text-white">Pedido #4502</h3>
+</div>
+<span class="text-xs font-medium text-[#4c669a] dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">hace 12 min</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 rounded-lg bg-cover bg-center" data-alt="Close up of organic fresh vegetables box" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHUkl05yzVNlrKPc7q9ygVpl9ibVEzGh-4NZeD5kbIlSMJYwObRIlulEYgksPta1meU1jDL3Iy03WMdPG01I6SiB4dTv_nuWGHSEA7mqdIUPZjGPDfUYlZx2NTq6AZBOvHsWOl2WkD5T__K-tjXtsGQiGLnywpznRclYhBFSItp_l4oKEj6kE_5hUn7IcUhsPlf45fkgWAl8w6IwLfMgv5LvJWMUDJ_0jSVP-8JpSYZSkBIfzYdQgy2XN7ZBhP037BgBxPhhZyoS5u');"></div>
+<div class="flex flex-col">
+<p class="text-base font-semibold">Juan Pérez</p>
+<p class="text-sm text-[#4c669a] dark:text-gray-400">8 Artículos • <span class="font-bold text-primary">$45.50</span></p>
+</div>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 h-10 border border-[#cfd7e7] dark:border-gray-700 rounded-lg text-sm font-bold text-[#0d121b] dark:text-white flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">visibility</span> Detalles
+                        </button>
+<button class="flex-[1.5] h-10 bg-primary text-white rounded-lg text-sm font-bold flex items-center justify-center gap-2">
+                            Aceptar Pedido
+                        </button>
+</div>
+</div>
+</div>
+<!-- Pending Card 2 -->
+<div class="group flex flex-col items-stretch justify-start rounded-xl shadow-sm bg-white dark:bg-[#1a2133] border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-yellow-500 flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-yellow-500"></span> PENDIENTE
+                            </span>
+<h3 class="text-lg font-bold mt-1 text-[#0d121b] dark:text-white">Pedido #4505</h3>
+</div>
+<span class="text-xs font-medium text-[#4c669a] dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">hace 18 min</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 rounded-lg bg-cover bg-center" data-alt="Sack of seasonal fresh apples" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDww-nnJ3HRwB6oWi7YEHzCbBXSVN3P4XPKqkzzJC42T7eTVfnCwOXWdxTr6BnAZZGCWiMKcEaNyaClGcnAmokfkWNPe11XJPDYkWY5rlQ7B5RsuSLaQSew3wY9ppwKunntX_sj0ZMZHQEe2UeeE_3uPUdKy0tFYcaUKtyZBC9N54qlMpcRjMSaaOAiM11gV5LkcxAsQYfRpV5spri2wcuGjXMmlq4jPHMH2CKlPFWlHU6wBX_iQidN_CKxF6clG7E6gYdXM2o6lDZ5');"></div>
+<div class="flex flex-col">
+<p class="text-base font-semibold">Elena Rodríguez</p>
+<p class="text-sm text-[#4c669a] dark:text-gray-400">3 Artículos • <span class="font-bold text-primary">$12.20</span></p>
+</div>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 h-10 border border-[#cfd7e7] dark:border-gray-700 rounded-lg text-sm font-bold text-[#0d121b] dark:text-white flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">visibility</span> Detalles
+                        </button>
+<button class="flex-[1.5] h-10 bg-primary text-white rounded-lg text-sm font-bold flex items-center justify-center gap-2">
+                            Aceptar Pedido
+                        </button>
+</div>
+</div>
+</div>
+<!-- Pending Card 3 -->
+<div class="group flex flex-col items-stretch justify-start rounded-xl shadow-sm bg-white dark:bg-[#1a2133] border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="p-4 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-yellow-500 flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-yellow-500"></span> PENDIENTE
+                            </span>
+<h3 class="text-lg font-bold mt-1 text-[#0d121b] dark:text-white">Pedido #4508</h3>
+</div>
+<span class="text-xs font-medium text-[#4c669a] dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">hace 25 min</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="h-12 w-12 rounded-lg bg-cover bg-center" data-alt="Variety of colorful exotic fruits" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD57xG-1edJZYD8CSjgOL5LoWwHQQag5Kgk4HZbBubLZcwLRZwZUqA7jmlkq3p1ALQDBK1WL_9hhEWTifUx-_2ISHRVoCqy8aZkq4gp51O-2LxMa_uGth47KckaATtL6Bj23KDrYJIcyZBpbNXFIcJrg7WaCi63pSp5AK0m8HGG9MwFQ9J-Qc1VzPzHTw8_nKAbRG1A9G1XvVlbN35s99HMg-Tx04CKbikjj0zxxXtTeWdcsArVssuJ49WKU2tiuj3_-3__akdG571e');"></div>
+<div class="flex flex-col">
+<p class="text-base font-semibold">Roberto Gomez</p>
+<p class="text-sm text-[#4c669a] dark:text-gray-400">12 Artículos • <span class="font-bold text-primary">$89.15</span></p>
+</div>
+</div>
+<div class="flex gap-2 pt-2">
+<button class="flex-1 h-10 border border-[#cfd7e7] dark:border-gray-700 rounded-lg text-sm font-bold text-[#0d121b] dark:text-white flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">visibility</span> Detalles
+                        </button>
+<button class="flex-[1.5] h-10 bg-primary text-white rounded-lg text-sm font-bold flex items-center justify-center gap-2">
+                            Aceptar Pedido
+                        </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Navigation (iOS style) -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-[#1a2133]/90 backdrop-blur-lg border-t border-[#cfd7e7] dark:border-gray-700 px-6 py-3 flex justify-between items-center z-30">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Pedidos</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#4c669a] dark:text-gray-400">
+<span class="material-symbols-outlined">inventory</span>
+<span class="text-[10px] font-bold">Stock</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#4c669a] dark:text-gray-400">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold">Ventas</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#4c669a] dark:text-gray-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Ajustes</span>
+</div>
+</footer>
+</div>
+</body></html>

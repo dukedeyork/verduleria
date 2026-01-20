@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400,FILL@0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full max-w-[480px] mx-auto flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between">
+<div class="flex size-10 items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm cursor-pointer">
+<span class="material-symbols-outlined text-[#0d1b12] dark:text-white">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Mis Pedidos</h2>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-3 p-4 overflow-x-auto no-scrollbar">
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary px-6 shadow-sm">
+<p class="text-[#0d1b12] text-sm font-semibold">Todos</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-gray-800 px-6 shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-[#0d1b12] dark:text-white text-sm font-medium">Activos</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-gray-800 px-6 shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-[#0d1b12] dark:text-white text-sm font-medium">Completados</p>
+</div>
+<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-gray-800 px-6 shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-[#0d1b12] dark:text-white text-sm font-medium">Cancelados</p>
+</div>
+</div>
+<!-- Order List Section -->
+<div class="flex flex-col gap-4 p-4">
+<!-- Active Order Card -->
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] bg-white dark:bg-gray-900 overflow-hidden border border-gray-100 dark:border-gray-800">
+<div class="p-4">
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight">Pedido #10293</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">12 de Octubre, 2023</p>
+</div>
+<div class="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
+                            En camino
+                        </div>
+</div>
+<!-- Product Icons Preview -->
+<div class="flex items-center gap-2 mb-4">
+<div class="size-10 rounded-lg bg-cover bg-center border border-gray-100 dark:border-gray-700" data-alt="Fresh potatoes in a wooden crate" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCrp-COcPVUalMgyuw_O8mnnhJDKMdEGD3aeZeDQbE_9t3iYjBC2WpLN0WBTJZhqHIwEV0MWlHN9m8_NjgeHy7ueJya6JHzvRhjE0N-hAAeQt6_qZrXC7tmeggs1nl_KyNAwD74BguZKv5TFsBHpTxVfBt98jV1mhU8yrZXDA3wPhHUJP0miXLA-gP0GvhfoS84xlrNYJt_NQBooyJ_NEy8g1Hy7Jd6DHTExnqj_7bKTtiZj_037mS_sTMCPYBAn_fGp4BiTfw4OLE')"></div>
+<div class="size-10 rounded-lg bg-cover bg-center border border-gray-100 dark:border-gray-700" data-alt="Red ripe tomatoes on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDZTXc-_kuTLD67OqNKnLhhPzR4GZEQpocvjkXXmOhogX5V7si9LqoCXNj49SIIRj0l_8OVNZ55XJLNK_2pPt9k7YcljeegWKyrfjJXdH7sfGHViQ1Mfw0PeFX27OzYlLNzpaxpibUofPMeCzn6FdhBJnKXl1ztF79Po545gxW9BrpIHjFm8n2sbESuxhDWj-jci_ypHvr1ChA_gEokTAROx35vG-8iOsqcmI3mkbaTyeVCTnaTQM-mLFMRifoT-lwNBbyOGjeFF9Q')"></div>
+<div class="size-10 rounded-lg bg-cover bg-center border border-gray-100 dark:border-gray-700" data-alt="Green lettuce leaves close up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYFgBYSTE9m1Uc8VSkeYiG6KYu9uQgwDEPTfn930whRpXGvN8rEGdVdLCdGGXjteGlHR5dblOHdcqz53ZSN2Kd0R1_IgsF_CfAboKVqe_deU_8-iAUnp6WJFabKIhGSgbCyLewD-0AEePxbRwfW0MI_YPlA6FpUH8GVvLxAKCk28ApbV1wUsOBlxX5BOhSe5eNhr0MMMs8SeVRLH6_zb69WBh6-rA9dL0RLsEnshDaEj-vsw6ZFNS4Eco6M097bkk7Drv-uFtqW--v')"></div>
+<div class="size-10 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center border border-gray-100 dark:border-gray-700">
+<span class="text-xs font-bold text-gray-500">+2</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-gray-50 dark:border-gray-800">
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Total</p>
+<p class="text-[#0d1b12] dark:text-white text-base font-bold">$24.50</p>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-primary text-[#0d1b12] text-sm font-bold shadow-sm active:scale-95 transition-transform">
+                            Ver Detalles
+                        </button>
+</div>
+</div>
+</div>
+<!-- Delivered Order Card -->
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] bg-white dark:bg-gray-900 overflow-hidden border border-gray-100 dark:border-gray-800">
+<div class="p-4">
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight">Pedido #10285</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">05 de Octubre, 2023</p>
+</div>
+<div class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-wider">
+                            Entregado
+                        </div>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="size-10 rounded-lg bg-cover bg-center border border-gray-100 dark:border-gray-700" data-alt="Colorful mix of fresh vegetables" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBBwGxsTfczHuX9LOpmUBcx-cmt1VBzedFr6ERfGSGKvbQX1L24uL6mCsOhGDxiG_os0VFZbx-P819h3rs7EQr4Ws9BabJykihL53o0rNPl_jc6w_p1sBg7BDbrwXRqleZzQH-5ICaR3kbykvzxT0k1LXCbbzE25V8AglMIEccaDhLtqzg9ZqAS41BZzpTkgGCWJM-i_ODhqyQxsu1KrNBqzKiJOjhAprhz2op7YaRYYmDwBz3WtXiY1OwO8z_KCgNNtreIJABis6q')"></div>
+<div class="size-10 rounded-lg bg-cover bg-center border border-gray-100 dark:border-gray-700" data-alt="Whole and cut avocados" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDX8IBAe-92-5g0IYeZeG9HZKqUI6dNdnRPyZpUgB3XYsEq8NzZaQ7SBHQtSqBmFxw4WgRFiR0gzkXl0SwwdEoks4OINSCdaw2M0dD0wArwakHtwFv5bAEKa308TsjhPXThT0dRadgv8C-W7Nzfe9o7hm2yXSwUjrzoyFwp3k1L7eEzPFz6ILKJW0xzR9x1o5U5AqWQ7aZUqMSPWxwuAxcCqs09IuQQMN5Ja_d6a0Ra5kWCoKti_FXkRhQhlcs4NgYYSWNdUTDGNpsb')"></div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-gray-50 dark:border-gray-800">
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Total</p>
+<p class="text-[#0d1b12] dark:text-white text-base font-bold">$18.20</p>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-primary text-[#0d1b12] text-sm font-bold shadow-sm active:scale-95 transition-transform">
+                            Ver Detalles
+                        </button>
+</div>
+</div>
+</div>
+<!-- Cancelled Order Card -->
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] bg-white dark:bg-gray-900 overflow-hidden border border-gray-100 dark:border-gray-800 opacity-80">
+<div class="p-4">
+<div class="flex justify-between items-start mb-3">
+<div>
+<p class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight">Pedido #10250</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">28 de Septiembre, 2023</p>
+</div>
+<div class="px-3 py-1 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-wider">
+                            Cancelado
+                        </div>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="size-10 rounded-lg bg-cover bg-center border border-gray-100 dark:border-gray-700 grayscale" data-alt="Oranges and fruit basket" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPqg_HDAOKPVooLRekCsGr65OU2fSYkZF_4Mi9gOsKbD2uct3EwFrI5zcug1HlwBVkLYlOKnAxqKY_bxmysYdBBAu6Oh5DoF-BJ7Kb59Q3uVUtXhB_6hHjyhQHaU__ZLuQT2xQR42Q-hSAHrlWcil42oWSeB-qNJaf-Epjy7cyBY3_skCeIh5r_Yzf6gNiV5FyMi2vfHSujdXiMlI5302WJhtDP6rKrOa8GdSjbacgdV2SBpeHtEBPy1G-2DHWrpykISD81Noc8373')"></div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-gray-50 dark:border-gray-800">
+<div>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Total</p>
+<p class="text-[#0d1b12] dark:text-white text-base font-bold">$12.00</p>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-10 px-4 bg-gray-200 dark:bg-gray-800 text-[#0d1b12] dark:text-white text-sm font-bold shadow-sm active:scale-95 transition-transform">
+                            Ver Detalles
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for tab bar -->
+<div class="h-24"></div>
+<!-- Bottom Navigation (iOS style) -->
+<div class="fixed bottom-0 left-0 right-0 mx-auto max-w-[480px] bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 px-6 py-3 flex justify-between items-center z-20">
+<div class="flex flex-col items-center gap-1 cursor-pointer text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Inicio</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer text-gray-400">
+<span class="material-symbols-outlined">shopping_basket</span>
+<span class="text-[10px] font-medium">Tienda</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer text-primary">
+<span class="material-symbols-outlined fill-1">receipt_long</span>
+<span class="text-[10px] font-bold">Pedidos</span>
+</div>
+<div class="flex flex-col items-center gap-1 cursor-pointer text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estadísticas de Ventas (Admin)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d1b12] dark:text-white transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50">
+<div class="text-[#0d1b12] dark:text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">menu</span>
+</div>
+<h2 class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Estadísticas de Ventas</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-[#0d1b12] dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 pb-24">
+<!-- Stats Grid -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-background-dark/50 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c9a66] dark:text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Ventas Totales</p>
+<span class="material-symbols-outlined text-primary text-sm">payments</span>
+</div>
+<p class="text-[#0d1b12] dark:text-white tracking-light text-2xl font-bold leading-tight">$14,240.00</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[#078829] text-xs">trending_up</span>
+<p class="text-[#078829] text-sm font-semibold leading-normal">+12.5%</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-background-dark/50 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c9a66] dark:text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Pedidos Hoy</p>
+<span class="material-symbols-outlined text-primary text-sm">shopping_cart</span>
+</div>
+<p class="text-[#0d1b12] dark:text-white tracking-light text-2xl font-bold leading-tight">42</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[#078829] text-xs">trending_up</span>
+<p class="text-[#078829] text-sm font-semibold leading-normal">+5.2%</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-background-dark/50 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-[#4c9a66] dark:text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Clientes Nuevos</p>
+<span class="material-symbols-outlined text-primary text-sm">person_add</span>
+</div>
+<p class="text-[#0d1b12] dark:text-white tracking-light text-2xl font-bold leading-tight">15</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[#e72a08] text-xs">trending_down</span>
+<p class="text-[#e72a08] text-sm font-semibold leading-normal">-2.1%</p>
+</div>
+</div>
+</div>
+<!-- Chart Section -->
+<div class="px-4 py-2">
+<div class="flex flex-col gap-2 rounded-xl border border-[#cfe7d7] dark:border-white/10 p-6 bg-white dark:bg-background-dark/50 shadow-sm">
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<p class="text-[#4c9a66] dark:text-gray-400 text-sm font-medium leading-normal">Desempeño Semanal</p>
+<p class="text-[#0d1b12] dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">$8,450.00</p>
+</div>
+<div class="flex gap-1 items-center bg-primary/10 px-2 py-1 rounded-full mb-1">
+<p class="text-[#078829] text-xs font-bold leading-normal">+8.4%</p>
+</div>
+</div>
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg class="overflow-visible" fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_admin)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#13ec5b" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_admin" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#13ec5b" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#13ec5b" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-around">
+<p class="text-[#4c9a66] dark:text-gray-400 text-[11px] font-bold uppercase tracking-wider">Lun</p>
+<p class="text-[#4c9a66] dark:text-gray-400 text-[11px] font-bold uppercase tracking-wider">Mar</p>
+<p class="text-[#4c9a66] dark:text-gray-400 text-[11px] font-bold uppercase tracking-wider">Mie</p>
+<p class="text-[#4c9a66] dark:text-gray-400 text-[11px] font-bold uppercase tracking-wider">Jue</p>
+<p class="text-[#4c9a66] dark:text-gray-400 text-[11px] font-bold uppercase tracking-wider">Vie</p>
+<p class="text-[#4c9a66] dark:text-gray-400 text-[11px] font-bold uppercase tracking-wider">Sab</p>
+<p class="text-[#4c9a66] dark:text-gray-400 text-[11px] font-bold uppercase tracking-wider">Dom</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Best Sellers Header -->
+<div class="flex items-center justify-between px-4 pt-6 pb-2">
+<h2 class="text-[#0d1b12] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em]">Productos más vendidos</h2>
+<button class="text-primary text-sm font-semibold">Ver todos</button>
+</div>
+<!-- Best Sellers List -->
+<div class="px-4">
+<div class="flex flex-col bg-white dark:bg-background-dark/50 border border-[#cfe7d7] dark:border-white/10 rounded-xl overflow-hidden divide-y divide-[#cfe7d7] dark:divide-white/10">
+<!-- Item 1 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-3 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-12" data-alt="Fresco aguacate hass verde maduro" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkZzPb0SuXG2S__AivZESUrrujxqxIrWDVBcT7JWisLKzNymtG_BhIpfKfFl5ZGsmqfX7ucU0ZtOnJBPMPSMgzkpldLkQ7Yy_vA6KfamzKJzlDLVE0fXzEMe4TTBEuAxjErhQ-1gbyT6xon6A57m-pAZbVm-oeB-LCSANPFMHNafb-A_DgbCfOAKzaOzK1-gUM3G2_PMe3I2mFs6q4Ce5hh6cFGlwVY3IssldGcEwKEu9Y--ed0XBuUk7hHfBzjUcpgy5wkpdw9WEl");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#0d1b12] dark:text-white text-base font-medium leading-tight">Aguacate Hass</p>
+<p class="text-[#4c9a66] text-xs font-normal leading-normal">150 unidades vendidas</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<p class="text-[#0d1b12] dark:text-white text-base font-bold leading-normal">25%</p>
+<div class="w-20 h-1.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[25%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-3 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-12" data-alt="Tomates rojos brillantes en rama" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApKpzJIvmU7tJTxA_ilBLS2xILchuxop_kHqCsrHEhhz5cyH4an5-E3cTTCnZfR7RwIws_8ATvlxFFrqUGZCgsg7uao2JhnmYpg-CgAw656DfA50MvjMQhGKxcWMFfiwDfMIK0KjsgU7mFqhXd5e8K2IclazzPi129mzDyMf1x2eWklJA1JnkQaOLcArpFhZ-wkck2tCItf9vCFjOcYabnKCvuH14kJQCN2upTEC9mMaHZq81P9uiwmnr9S2aDPppZOSRTcdRiRAYN");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#0d1b12] dark:text-white text-base font-medium leading-tight">Tomate Roma</p>
+<p class="text-[#4c9a66] text-xs font-normal leading-normal">112 unidades vendidas</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<p class="text-[#0d1b12] dark:text-white text-base font-bold leading-normal">18%</p>
+<div class="w-20 h-1.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[18%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-3 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-12" data-alt="Plátanos amarillos maduros racimo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAG6fpAMHmUBEQczWCG4xMyVgD_Bcj4IQ0Rzqh9guJuO7_v64pmz4DVPibepBIkfnyoDT8s6siaVyd881Hvlh9uPcLVnpl9W7BfC_nMjIxuE8eMbhLLfqeUQJ94_IaOTth1q7mGeIoLihlSjKJnrhP0qXUa5y3RrcC48n_GlyqpPk41ZWIm4pud7L7hz0yZMuBPOV3LGYYj88OgLJQkZMlui0K09XQ3iGOpk6Xpw2daGtNXf-tmr-U_L7o9hijldO1T9pEp0J1Ej70j");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#0d1b12] dark:text-white text-base font-medium leading-tight">Plátano Tabasco</p>
+<p class="text-[#4c9a66] text-xs font-normal leading-normal">95 unidades vendidas</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<p class="text-[#0d1b12] dark:text-white text-base font-bold leading-normal">15%</p>
+<div class="w-20 h-1.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[15%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-3 justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-12" data-alt="Espinacas verdes frescas en hoja" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBL12maK4yEbqTbeHcIooXeIVRqtjaAHuYoYEoVE03_sQX2N_Qwj0u9MhmUlUCytBXT-umcUyWnkZqM0N-biMni76yhjpq0dk0b1ppEaAl9DHaYoku8OtiG4DmkH5KBDyxp0GxvbY4pa0mWyjbEzlZGXGkGyId6SBaFIgKEBceBEUETtDHC-YcfRb9BL-WNNBzlRW_N43q37_MZR1VepHyerzDEq9Jv_te4b6efPsd5BjU8N0g4Pnjd4-xvrb0nWU7VWfINHRR9jgax");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#0d1b12] dark:text-white text-base font-medium leading-tight">Espinaca Baby</p>
+<p class="text-[#4c9a66] text-xs font-normal leading-normal">78 unidades vendidas</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<p class="text-[#0d1b12] dark:text-white text-base font-bold leading-normal">12%</p>
+<div class="w-20 h-1.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[12%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- iOS Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-[#cfe7d7] dark:border-white/10 px-6 py-3 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-[#4c9a66] dark:text-gray-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#4c9a66] dark:text-gray-400">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-medium">Inventario</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined font-bold">query_stats</span>
+<span class="text-[10px] font-bold">Ventas</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#4c9a66] dark:text-gray-400">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Pedidos</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#4c9a66] dark:text-gray-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</div>
+</nav>
+</div>
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detalle del Pedido (Admin)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#13ec5b",
+                "background-light": "#f6f8f6",
+                "background-dark": "#102216",
+              },
+              fontFamily: {
+                "display": ["Public Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: "Public Sans", sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d1b12] dark:text-white min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="flex items-center p-4 justify-between max-w-lg mx-auto w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#0d1b12] dark:text-white cursor-pointer">arrow_back_ios</span>
+<h2 class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight tracking-tight">Pedido #12345</h2>
+</div>
+<div class="flex items-center">
+<span class="bg-primary/20 text-[#0d1b12] dark:text-primary px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase">Pendiente</span>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-lg mx-auto w-full pb-32">
+<!-- Section: Customer Information -->
+<section class="mt-4">
+<h3 class="text-[#0d1b12] dark:text-white text-lg font-bold px-4 mb-2">Información del Cliente</h3>
+<div class="bg-white dark:bg-gray-900 mx-4 rounded-xl shadow-sm overflow-hidden">
+<div class="flex gap-4 p-4 items-center border-b border-gray-100 dark:border-gray-800">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14 border-2 border-primary/30" data-alt="Profile picture of a male customer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc2gxipuqCE_ljxx-QpUxl4IPulunL9MTOW4HEMMHtdmz8trUm1fUk6uJs4lKJZJz-neVJYYAt60Wndma98n3q3pqTfhWg21QmIp0ihabvbLPrAhI9Jmy3cSpu_OrxyYBlKH2z-vWXGxVsD8OMryunNNQV3TKhnm8bXzkSk-cxtYjwn9Ppblz1S1fvDKGy2Km4kWxTjLgh0yZiYpyVDLyt6lvR1r7iMOmnCXuvCIJA-pJws7n_p-C-rhn5wGIw5WXTfO8tAcGNmw08");'></div>
+<div class="flex flex-1 flex-col">
+<p class="text-[#0d1b12] dark:text-white text-base font-semibold">Juan Pérez</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">call</span>
+                            +54 11 1234-5678
+                        </p>
+</div>
+<div class="bg-primary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-[#0d1b12] dark:text-primary">phone</span>
+</div>
+</div>
+<div class="p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">location_on</span>
+<div class="flex flex-col gap-1">
+<p class="text-[#0d1b12] dark:text-white text-sm leading-snug">Av. Siempre Viva 742, Springfield, Buenos Aires, CP 1234</p>
+<p class="text-primary text-xs font-bold uppercase cursor-pointer">Ver en el mapa</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Products -->
+<section class="mt-8">
+<div class="flex justify-between items-end px-4 mb-2">
+<h3 class="text-[#0d1b12] dark:text-white text-lg font-bold">Productos</h3>
+<p class="text-sm text-gray-500">3 artículos</p>
+</div>
+<div class="space-y-1">
+<!-- Product Item 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-4 px-4 py-3 rounded-xl shadow-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="Fresh organic oranges in a basket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxwt1Kiv53HQEuwF8idJy-HPqjPnY_ay2qOTtAufvNC9dyz7wabw5rASjGv616eHGA53hrxwFZPIjpjFoEUZqCLPtWZune9dzNgiDNboiy6O0t-vTuf9G3V69EHauTuJYiHnuEIU_3L7K8u3wV5H0oszw9oooxiWte89uiGPeJvcoqeN8gaOWOgkW5Q7k7aB_wBR-pRa72IAJ0te67ItXbFEgCPbiOVD6THoYtmdb2M-rkRVRegXS8ehv8otB_KkqmGPlJG0CJCWLJ");'></div>
+<div class="flex flex-1 flex-col justify-center overflow-hidden">
+<p class="text-[#0d1b12] dark:text-white text-base font-semibold truncate">Naranjas de Ombligo</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">3kg x $2.00</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#0d1b12] dark:text-white text-base font-bold">$6.00</p>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-4 px-4 py-3 rounded-xl shadow-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="Red ripe plum tomatoes on vine" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACvKQjc9n-QHykYMSoBbn3tq1yI0tVtimhEvBwIF78B1Pd0qy1gQVG4SxLj0PliFkpztyHbquqjDoRwVzUk5enKLNGTyAo1mFRIPU6FA1FgRAQr1h38ppm3Tsg0J80G7wcGDf8EEbTk7tKiq5wsuMNOs3AqBJctH1ItCxV9SLc4x3VUTVWuJBkJxNM34OPrMafhRRa4Q_G1sVH473ZDAJ1ta_hidJXYbq3V1fpv_s1cwo3ssbaSCBRpBe8DI4xUvbw9Yut0wDI0ZO-");'></div>
+<div class="flex flex-1 flex-col justify-center overflow-hidden">
+<p class="text-[#0d1b12] dark:text-white text-base font-semibold truncate">Tomate Perita</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">1kg x $2.50</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#0d1b12] dark:text-white text-base font-bold">$2.50</p>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900 mx-4 px-4 py-3 rounded-xl shadow-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 shrink-0" data-alt="Bunch of green organic spinach leaves" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlrYFbh6DtyEhqmL0OYzAhgzJ9YL-wRzaM2sI1eg8gyze2NhZ7LxgD_cpiAJKrgsxhQPxOJpAckL_2zdXHuZLLjxRhab9PuYqlfmM3BdQaXFFSEPIvCnmoM-ogQizVnK7zj9qxHDjr1LD3wO_3IWCqxXrJB0nbpN5XkEyYvZe-e3XYV0kR52aBqpDBVuvOLBRC1tijNnrwWQ6kWmii8Yqgb8b9I_40xVAIbUwwi8gWTKUk6S6O6TDXsjDZh15J8htuS2LEttGece4_");'></div>
+<div class="flex flex-1 flex-col justify-center overflow-hidden">
+<p class="text-[#0d1b12] dark:text-white text-base font-semibold truncate">Espinaca Atado</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">2 un x $1.25</p>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#0d1b12] dark:text-white text-base font-bold">$2.50</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Summary -->
+<section class="mt-8 px-4">
+<div class="bg-white dark:bg-gray-900 p-5 rounded-2xl shadow-sm space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-gray-500 dark:text-gray-400">Subtotal</span>
+<span class="text-[#0d1b12] dark:text-white font-medium">$11.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-500 dark:text-gray-400">Costo de Envío</span>
+<span class="text-[#0d1b12] dark:text-white font-medium">$1.50</span>
+</div>
+<div class="pt-3 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+<span class="text-[#0d1b12] dark:text-white text-lg font-bold">Total del Pedido</span>
+<span class="text-primary text-xl font-black">$12.50</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Actions Container -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-gray-200 dark:border-gray-800 p-4 pb-8">
+<div class="max-w-lg mx-auto flex gap-3">
+<!-- Print Button (Secondary) -->
+<button class="bg-gray-100 dark:bg-gray-800 text-[#0d1b12] dark:text-white flex items-center justify-center p-4 rounded-xl aspect-square">
+<span class="material-symbols-outlined">print</span>
+</button>
+<!-- Main Action (Primary) -->
+<button class="flex-1 bg-primary hover:bg-opacity-90 text-black font-bold text-base py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined font-bold">check_circle</span>
+                Marcar como Preparado
+            </button>
+</div>
+</div>
+</body></html>

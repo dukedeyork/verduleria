@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tienda (Modo Oscuro)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#42f07c",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-300">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-20 bg-background-light dark:bg-background-dark/95 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+<h1 class="text-xl font-bold tracking-tight">Tienda</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-10 rounded-full bg-slate-200 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">search</span>
+</button>
+<button class="relative flex items-center justify-center size-10 rounded-full bg-slate-200 dark:bg-slate-800">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">shopping_cart</span>
+<span class="absolute top-0 right-0 size-4 bg-primary text-[10px] font-bold text-background-dark rounded-full flex items-center justify-center border-2 border-background-light dark:border-background-dark">3</span>
+</button>
+</div>
+</div>
+<!-- Search Bar (Integrated) -->
+<div class="relative w-full group">
+<input class="w-full h-11 bg-slate-100 dark:bg-slate-800/50 border-none rounded-xl pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-slate-400" placeholder="Buscar frutas, verduras..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Category Chips -->
+<div class="flex gap-3 px-4 py-4 overflow-x-auto no-scrollbar">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 transition-transform active:scale-95">
+<p class="text-background-dark text-sm font-semibold">Todos</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Frutas</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Verduras</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Tubérculos</p>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-slate-200 dark:bg-slate-800 px-5 transition-transform active:scale-95">
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium">Orgánicos</p>
+</button>
+</div>
+<!-- SectionHeader -->
+<div class="flex items-center justify-between px-4 mt-2">
+<h3 class="text-lg font-bold leading-tight tracking-tight">Productos Frescos</h3>
+<button class="text-primary text-sm font-semibold">Ver todo</button>
+</div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-2 gap-4 p-4">
+<!-- Product Card 1 -->
+<div class="flex flex-col gap-3 group relative bg-white dark:bg-slate-800/30 p-2 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up of a ripe green organic avocado" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjnUwYg03xZR9cNUh59ta4SXl5OzBMfelM9qHJYaMv5rXuBX1EmUvc4OpWjE8vbtfWmDpG9QaLMDkOf8Bz3gO34FePEfcm8aKsQTBLRAstfSJ08-sIvgeYHNNynTNFkv60CnuAfJWwKIrkmTVZkvqUB-jvO_AaLIKNd1xqVXTCPAeW6CCHzen-f7xiSPIZKxAAH97pJ4qxC_jJbuLxV2OKIX0RY8Edn9-D55nY3TbkEb0nA2VRUV93JKpkTrPgig2B-4QQJOt8pEEG");'>
+</div>
+<button class="absolute top-2 right-2 size-8 flex items-center justify-center bg-white/80 dark:bg-black/40 backdrop-blur rounded-full">
+<span class="material-symbols-outlined text-sm text-slate-700 dark:text-white">favorite</span>
+</button>
+</div>
+<div class="px-1 pb-1">
+<p class="text-slate-900 dark:text-white text-sm font-semibold leading-tight line-clamp-1">Aguacate Orgánico</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mb-2">1 Unidad</p>
+<div class="flex items-center justify-between">
+<p class="text-primary text-base font-bold">$4.50</p>
+<button class="flex size-8 items-center justify-center rounded-lg bg-primary text-background-dark transition-transform active:scale-90 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined font-bold text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col gap-3 group relative bg-white dark:bg-slate-800/30 p-2 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Fresh red strawberries in a rustic basket" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9o2GI2Wmraws4ju1cic7PcYCVuDE7poHWv7wniCCh_mI2M_dupH4wZB2Vnd8H_ckLexy2ak6gfxZfaAOawB-yGJgPQqIS-46ZOPFCLMuk5zHrVIJT3TAOpuymkLrUGH3CBdARBqhaR6hMCKmnT_z1zyUMHEwndQp1LnXl3nE5ZeeKXIYTnvuvoURkp3t6lvC3S1nt63v9RmthBnki7DlcQklVxQRQ_4rHMEy0uubhM2jUQZIehFY2k8ItrshCcm3BDNNN8-o0RV5N");'>
+</div>
+<button class="absolute top-2 right-2 size-8 flex items-center justify-center bg-white/80 dark:bg-black/40 backdrop-blur rounded-full">
+<span class="material-symbols-outlined text-sm text-slate-700 dark:text-white">favorite</span>
+</button>
+</div>
+<div class="px-1 pb-1">
+<p class="text-slate-900 dark:text-white text-sm font-semibold leading-tight line-clamp-1">Fresas Rojas</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mb-2">500g</p>
+<div class="flex items-center justify-between">
+<p class="text-primary text-base font-bold">$3.99</p>
+<button class="flex size-8 items-center justify-center rounded-lg bg-primary text-background-dark transition-transform active:scale-90 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined font-bold text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col gap-3 group relative bg-white dark:bg-slate-800/30 p-2 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Vibrant green organic kale leaves" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDp-ohuFZCMqoCOn5kfZwkBCVmKYxlsQbB4weYNxr-YqYgJLOADsPV-MRu5-DJx6gbrNbfKFQ4ez_tqEPFFe-d0XH0F6VgROYQfbcEQucwNTKnii3If4Gw2nVFzRAcVV5_52RL8u6MCfG9GloBH1e768RL5neBkhN5RZFXuhh9cLf_ex_W7S1EIebNaDfKI9HFisI4VGAEcQNplsX2usaN2mgXjuSVIIXiCb7ZiFHniCn_YDbmt7sUZW9jJzA422P0UDx9WAIcaCC0L");'>
+</div>
+<button class="absolute top-2 right-2 size-8 flex items-center justify-center bg-white/80 dark:bg-black/40 backdrop-blur rounded-full">
+<span class="material-symbols-outlined text-sm text-slate-700 dark:text-white">favorite</span>
+</button>
+</div>
+<div class="px-1 pb-1">
+<p class="text-slate-900 dark:text-white text-sm font-semibold leading-tight line-clamp-1">Kale Fresco</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mb-2">Manojo</p>
+<div class="flex items-center justify-between">
+<p class="text-primary text-base font-bold">$2.00</p>
+<button class="flex size-8 items-center justify-center rounded-lg bg-primary text-background-dark transition-transform active:scale-90 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined font-bold text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="flex flex-col gap-3 group relative bg-white dark:bg-slate-800/30 p-2 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Small red cherry tomatoes on a vine" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBghs7xiyXrfLIbdSuanbJM55mWpL8DKzwTd-XrgvSOoT4tqMoVLcYhx1Ua57Yc-BFuDcAHzlJQuXg1Cu9O7rBj4F-N2bLlC3XBQasobYgWm8br4KL5A4m-j001pEqZM34iEYAsifnrHYGoUZF1piaI7s1-RfrZVxnqa1bq2ZQTId9qerMgw6uwhY1fim_FHD6gu3rl8RQWSDEAQNneu3u1-r525vXVuR5p0YTjkwjBWuIRMhbGGzmnS91lM8TN4s_iacRQpHTA_1FK");'>
+</div>
+<button class="absolute top-2 right-2 size-8 flex items-center justify-center bg-white/80 dark:bg-black/40 backdrop-blur rounded-full">
+<span class="material-symbols-outlined text-sm text-slate-700 dark:text-white">favorite</span>
+</button>
+</div>
+<div class="px-1 pb-1">
+<p class="text-slate-900 dark:text-white text-sm font-semibold leading-tight line-clamp-1">Tomate Cherry</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mb-2">Paquete 250g</p>
+<div class="flex items-center justify-between">
+<p class="text-primary text-base font-bold">$2.50</p>
+<button class="flex size-8 items-center justify-center rounded-lg bg-primary text-background-dark transition-transform active:scale-90 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined font-bold text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Promotion Banner -->
+<div class="mx-4 p-4 rounded-xl bg-primary/10 border border-primary/20 flex items-center gap-4">
+<div class="flex-1">
+<h4 class="text-primary font-bold text-sm">¡Promoción Semanal!</h4>
+<p class="text-xs text-slate-400 dark:text-slate-300">20% de descuento en todos los cítricos este fin de semana.</p>
+</div>
+<button class="bg-primary text-background-dark text-xs font-bold px-3 py-2 rounded-lg">Canjear</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="absolute bottom-0 left-0 right-0 z-30 bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800/50 px-6 pt-3 pb-8 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined filled-icon text-primary transition-colors">storefront</span>
+<p class="text-[10px] font-bold text-primary uppercase tracking-wider">Tienda</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-[10px] font-medium uppercase tracking-wider">Pedidos</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<p class="text-[10px] font-medium uppercase tracking-wider">Favoritos</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium uppercase tracking-wider">Perfil</p>
+</a>
+</nav>
+<!-- Home Indicator (iOS style) -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full z-40"></div>
+</div>
+</body></html>

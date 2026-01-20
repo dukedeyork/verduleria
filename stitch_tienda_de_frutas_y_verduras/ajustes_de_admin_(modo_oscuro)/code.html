@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ajustes de Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Public Sans", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between border-b border-slate-200 dark:border-white/10">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-white">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Ajustes de Admin</h1>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-white/10">
+<span class="material-symbols-outlined text-slate-700 dark:text-white">account_circle</span>
+</button>
+</header>
+<main class="flex-1 max-w-md mx-auto w-full pb-32">
+<!-- Theme Toggle Section -->
+<section class="p-4 mt-2">
+<div class="flex flex-1 flex-col items-start justify-between gap-4 rounded-xl border border-slate-200 dark:border-[#326744] bg-white dark:bg-[#112217] p-5 sm:flex-row sm:items-center shadow-sm">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Modo Oscuro</p>
+<p class="text-slate-500 dark:text-[#92c9a4] text-sm font-normal leading-normal">Activa la interfaz de noche</p>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-[#23482f] p-0.5 transition-colors has-[:checked]:bg-primary">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md transition-all"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+<style>
+                        input:checked + div { transform: translateX(20px); }
+                    </style>
+</label>
+</div>
+</section>
+<!-- General Settings Header -->
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight px-5 pt-6 pb-2">Configuración General</h3>
+<!-- Settings List -->
+<div class="mx-4 overflow-hidden rounded-xl border border-slate-200 dark:border-white/5 bg-white dark:bg-[#112217]/50">
+<!-- Item: Notificaciones -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-white/5 hover:bg-slate-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 dark:bg-[#23482f] shrink-0 size-12">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Notificaciones de pedidos</p>
+<p class="text-slate-500 dark:text-[#92c9a4] text-xs font-normal leading-normal line-clamp-2">Gestionar alertas de nuevos pedidos</p>
+</div>
+</div>
+<div class="shrink-0 text-slate-400">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- Item: Horario -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-white/5 hover:bg-slate-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 dark:bg-[#23482f] shrink-0 size-12">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Horario de la tienda</p>
+<p class="text-slate-500 dark:text-[#92c9a4] text-xs font-normal leading-normal line-clamp-2">Configurar horas de apertura y cierre</p>
+</div>
+</div>
+<div class="shrink-0 text-slate-400">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- Item: Gestión de usuarios -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between hover:bg-slate-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 dark:bg-[#23482f] shrink-0 size-12">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Gestión de usuarios</p>
+<p class="text-slate-500 dark:text-[#92c9a4] text-xs font-normal leading-normal line-clamp-2">Administrar roles y permisos de empleados</p>
+</div>
+</div>
+<div class="shrink-0 text-slate-400">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- System Section -->
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight px-5 pt-8 pb-2">Sistema</h3>
+<div class="mx-4 overflow-hidden rounded-xl border border-slate-200 dark:border-white/5 bg-white dark:bg-[#112217]/50">
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between hover:bg-slate-50 dark:hover:bg-white/5 cursor-pointer transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-slate-400 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-white/5 shrink-0 size-12">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Copia de seguridad</p>
+<p class="text-slate-500 dark:text-[#92c9a4] text-xs font-normal leading-normal line-clamp-2">Última sincronización: Hace 2 horas</p>
+</div>
+</div>
+<div class="shrink-0 text-slate-400">
+<span class="material-symbols-outlined">sync</span>
+</div>
+</div>
+</div>
+<div class="px-5 pt-8">
+<button class="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-red-500/10 text-red-500 font-bold hover:bg-red-500/20 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+                Cerrar sesión
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 bg-white/80 dark:bg-[#102216]/90 backdrop-blur-xl border-t border-slate-200 dark:border-white/5 pb-8 pt-3">
+<div class="max-w-md mx-auto flex items-center justify-around px-4">
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">storefront</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Tienda</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">shopping_basket</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Pedidos</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">inventory_2</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary">Inventario</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-primary fill-[1]">settings</span>
+<span class="text-[10px] font-bold text-primary">Ajustes</span>
+</button>
+</div>
+</nav>
+<!-- iOS Home Indicator Safe Area spacing -->
+<div class="h-8 bg-white dark:bg-[#102216]"></div>
+</body></html>
