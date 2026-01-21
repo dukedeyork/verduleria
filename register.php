@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <label class="block">
                 <span class="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">DNI</span>
-                <input type="text" name="dni" required pattern="[0-9]{1,8}" maxlength="8" inputmode="numeric"
+                <input type="number" name="dni" required pattern="[0-9]{1,8}" maxlength="8" inputmode="numeric"
                     title="Solo números, hasta 8 dígitos"
                     class="form-input mt-1 block w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#102210] focus:border-primary focus:ring-primary"
                     placeholder="12345678">
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <label class="block">
                 <span class="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">Teléfono</span>
-                <input type="tel" name="phone" required
+                <input type="number" name="phone" required
                     class="form-input mt-1 block w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#102210] focus:border-primary focus:ring-primary"
                     placeholder="11 1234 5678">
             </label>
